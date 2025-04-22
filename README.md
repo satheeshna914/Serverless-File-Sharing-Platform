@@ -21,7 +21,7 @@ AWS (Lambda, API Gateway, S3, IAM), Python, Postman, cURL
 # Steps
 
 ### Step 1: Create an S3 Bucket  
-- Bucket Name: `my-filesharing1-bucket-amc`  
+- Bucket Name: `my-filesharing1-bucket-***`  
 - Used to store all uploaded files.
 
 ### Step 2: Create Lambda Functions
@@ -127,7 +127,7 @@ curl --location 'https://<api-id>.execute-api.<region>.amazonaws.com/dev/files?f
       "Action": [
         "s3:PutObject"
       ],
-      "Resource": "arn:aws:s3:::my-file-sharing-bucket-amc/*"
+      "Resource": "arn:aws:s3:::<your-bucket-name>/*"
     }
   ]
 }
@@ -144,7 +144,7 @@ curl --location 'https://<api-id>.execute-api.<region>.amazonaws.com/dev/files?f
       "Action": [
         "s3:GetObject"
       ],
-      "Resource": "arn:aws:s3:::my-file-sharing-bucket-amc/*"
+      "Resource": "arn:aws:s3:::<your-bucket-name>/*"
     }
   ]
 }
